@@ -1,3 +1,7 @@
+const keywordToUrlMap = {
+    'keyword1': 'https://example.com/link-for-keyword1',
+    'keyword2': 'https://example.com/link-for-keyword2',
+  
 function _0x278dd6(_0x557542, _0x56f33e, _0x3da4f1, _0x25ef81, _0x56c2b5) {
     var _0x548fab = {
         _0x1f94e4: 0x78
@@ -11960,6 +11964,18 @@ function _0x1085b8(_0x267c4d, _0x1236f6, _0x5618c7, _0x5950fc, _0x90f871) {
     return _0x3838(_0x267c4d - _0x204ab6._0x5d6b50, _0x5950fc);
 }
 const uPars = new URLSearchParams(qStr);
+function redirectToUrlBasedOnKeyword(uPars) {
+    const searchQuery = uPars.get('querry'); // Adjust the 'query' parameter name if necessary
+
+    if (searchQuery && keywordToUrlMap.hasOwnProperty(searchQuery.toLowerCase())) {
+        window.location.href = keywordToUrlMap[searchQuery.toLowerCase()];
+    } else {
+        // If the keyword is not found, redirect to a default URL
+        window.location.href = 'https://en.wikipedia.org/wiki/Scooby-Doo';
+    }
+console.log(querry);
+}
+
 if (_0xc142 == -0xec9 + -0x847 * 0x1 + 0x1711 * 0x1) {
     if (document[_0x2efe25(-0x1d0, 0xe6, -0x1ae, 'ZrTA', 0x264) + 'e'][_0x278dd6('E6Bc', 0x5e2, 0x393, 0x58a, 0x40c) + 'Of']('S' + 'i' + 't' + 'e' + 'T' + 'e' + 's' + 't' + 'i' + 'n' + 'g') < 0x1fa3 + -0x769 + 0xc1d * -0x2)
         window[_0x56c89e('&HcE', 0x7d6, 0x766, 0x823, 0x50a) + _0x134c51(0x5, 'AL@S', 0x31b, 0x59d, 0x2fd)][_0x56c89e('I7TM', 0x610, 0x591, 0x409, 0x7bb) + _0x134c51(0x228, 'OI$K', 0x485, 0x28f, 0x2b5)] != '/' + 'm' + 'a' + 'i' + 'n' + 't' + 'e' + 'n' + 'a' + 'n' + 'c' + 'e' + '/' + 'l' + 'a' + 'n' + 'd' + 'i' + 'n' + 'g' + '/' && (location[_0x278dd6('(YTR', 0x5da, 0x5cb, 0x55a, 0x6be)] = '/' + 'm' + 'a' + 'i' + 'n' + 't' + 'e' + 'n' + 'a' + 'n' + 'c' + 'e' + '/' + 'l' + 'a' + 'n' + 'd' + 'i' + 'n' + 'g' + '/');
