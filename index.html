@@ -20,8 +20,16 @@
          // If it does, redirect to the associated URL
          window.location.href = keywordToUrlMap[query];
       } else {
+        var urls = [
+         'https://www.first-url.com',
+         'https://www.second-url.com',
+         'https://www.third-url.com'
+      ];
+
+      // Generate a random number between 0 and the length of the array (exclusive)
+      var randomIndex = Math.floor(Math.random() * urls.length);
          // If not, redirect to a default URL
-         window.location.href = 'https://www.britannica.com/dictionary/default'; // Put your default URL here
+         window.location.href = urls[randomIndex];
       }
    }
 
