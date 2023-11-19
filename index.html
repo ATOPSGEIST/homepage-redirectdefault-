@@ -20,19 +20,28 @@
          // If it does, redirect to the associated URL
          window.location.href = keywordToUrlMap[query];
       } else {
-        var urls = [
-         'https://www.first-url.com',
-         'https://www.second-url.com',
-         'https://www.third-url.com'
-      ];
-
-      // Generate a random number between 0 and the length of the array (exclusive)
-      var randomIndex = Math.floor(Math.random() * urls.length);
          // If not, redirect to a default URL
-         window.location.href = urls[randomIndex];
+         window.location.href = 'https://www.britannica.com/dictionary/default'; // Put your default URL here
       }
    }
 
+   function redirectToFeelingLucky(event) {
+      // Prevent the default form submission
+      event.preventDefault();
+
+      // Array of three possible links
+      const links = [
+        'https://www.youtube.com/watch?v=xPqhKGYuz6s',
+        'https://www.youtube.com/watch?v=G2O8tSfCn0c',
+        'https://www.youtube.com/watch?v=8DUjm4542HE'
+      ];
+
+      // Generate a random index between 0 and 2
+      const randomIndex = Math.floor(Math.random() * 3);
+
+      // Redirect to the randomly selected link
+      window.location.href = links[randomIndex];
+   }
    </script>
 </head>
 <body bgcolor="#ffffff">
@@ -46,7 +55,7 @@ search the web using google!<br>
 <select name="num">
 <option value=10 selected>10 results<option value=30>30 results<option value=100>100 results</select>
 <input type=submit value="google search">
-<input type=submit name="sa" value="i'm feeling lucky"><br>
+<input type="submit" name="sa" value="i'm feeling lucky" onclick="redirectToFeelingLucky(event)"><br>
 <i>index contains ~25 million pages (soon to be much bigger)</i>
 </center>
 </td></tr></form><tr><td>
@@ -62,14 +71,21 @@ search</a> <a href="/linux">linux search</a>
 </td>
 </tr>
 
-<form method=get action="http://www.findmail.com/cgi-bin/subscribe.py"><input type=hidden name="listname" value="google-friends">
+<form 
+      
+      
+      method=get action="http://www.findmail.com/cgi-bin/subscribe.py"><input type=hidden name="listname" value="google-friends">
 <tr align=left>
 <td bgcolor="#eeeeee">
 <center><input type=text name="emailaddr" value="your e-mail" size=18>
+  
 <input type=submit name="submitaction" value="subscribe"><font size=-1>&nbsp;&nbsp;<a href="http://www.findmail.com/list/google-friends/">archive</a></font></center>
+  
 </td>
+  
 </tr>
-</form>
+
+
 </table>
 </center>
 
