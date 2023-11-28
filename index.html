@@ -2,29 +2,30 @@
 <head>
   <script type="text/javascript">
    function redirectToCustomLink(event) {
-      // Prevent the default form submission
-      event.preventDefault();
+         // Prevent the default form submission
+         event.preventDefault();
 
-      // Get the value of the input field with name 'query'
-      var query = document.getElementsByName('query')[0].value.toLowerCase();
+         // Get the value of the input field with name 'query'
+         var query = document.getElementsByName('query')[0].value.toLowerCase();
 
-      // Define your keyword-to-URL map
-      const keywordToUrlMap = {
-         'school': 'https://www.providenceschools.org/',
-         'life': 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwastelessfuture.com%2Fnews%2Fhas-human-lifespan-hit-its-natural-limit%2F&psig=AOvVaw0pBX9oKR5iwAelJTqTm8VM&ust=1699562940321000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCOjwlL2jtYIDFQAAAAAdAAAAABAD',
-         // Add more keywords and corresponding URLs as needed
-      };
+         // Define your keyword-to-URL map
+         const keywordToUrlMap = {
+            'school': 'https://www.providenceschools.org/',
+            'life': 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwastelessfuture.com%2Fnews%2Fhas-human-lifespan-hit-its-natural-limit%2F&psig=AOvVaw0pBX9oKR5iwAelJTqTm8VM&ust=1699562940321000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOjwlL2jtYIDFQAAAAAdAAAAABAD',
+            // Add more keywords and corresponding URLs as needed
+         };
 
-      // Check if the query matches any keyword
-      if (keywordToUrlMap.hasOwnProperty(query)) {
-         // If it does, redirect to the associated URL
-         window.location.href = keywordToUrlMap[query];
-      } else {
-         // If not, redirect to a default URL
-         window.location.href = 'https://www.britannica.com/dictionary/default'; // Put your default URL here
+         // Check if the query matches any keyword
+         if (keywordToUrlMap.hasOwnProperty(query)) {
+            // If it does, redirect to the associated URL
+            window.location.href = keywordToUrlMap[query];
+         } else {
+            // If not, perform a standard search
+            // This will construct the action URL of the form and add the query parameter to it
+            var formAction = '/1998/search?query=' + encodeURIComponent(query);
+            window.location.href = formAction;
+         }
       }
-   }
-
    function redirectToFeelingLucky(event) {
       // Prevent the default form submission
       event.preventDefault();
